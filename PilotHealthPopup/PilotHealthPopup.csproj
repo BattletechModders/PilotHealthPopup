@@ -7,8 +7,8 @@
     <ProjectGuid>{6CB5FB2A-0D77-4EF1-902E-59DBAE7EE9D5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EnemyPilotHealthPopup</RootNamespace>
-    <AssemblyName>EnemyPilotHealthPopup</AssemblyName>
+    <RootNamespace>PilotHealthPopup</RootNamespace>
+    <AssemblyName>PilotHealthPopup</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,6 +28,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
@@ -54,4 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetFileName)" "$(BattleTechGame)\Mods\PilotHealthPopup\" /y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

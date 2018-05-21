@@ -8,7 +8,7 @@ using BattleTech;
 using Harmony;
 using JetBrains.Annotations;
 
-namespace EnemyPilotHealthPopup
+namespace PilotHealthPopup
 {
     [UsedImplicitly]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
