@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Reflection;
-using System.Text;
+﻿using System.Reflection;
 using BattleTech;
 using Harmony;
-using JetBrains.Annotations;
+
+// ReSharper disable InconsistentNaming
+// ReSharper disable UnusedMember.Global
 
 namespace PilotHealthPopup
 {
-    [UsedImplicitly]
-    [SuppressMessage("ReSharper", "InconsistentNaming")]
     [HarmonyPatch(typeof(Pilot), "InjurePilot")]
     public static class Pilot_InjurePilot_Patch
     {
@@ -24,7 +19,7 @@ namespace PilotHealthPopup
                 return;
 
             __instance.ParentActor?.Combat.MessageCenter.PublishMessage(new AddSequenceToStackMessage(
-                new ShowActorInfoSequence(__instance.ParentActor, $"HEALTH: {__instance.TotalHealth - __instance.Injuries}/{__instance.TotalHealth}", 
+                new ShowActorInfoSequence(__instance.ParentActor, $"HEALTH: {__instance.TotalHealth - __instance.Injuries}/{__instance.TotalHealth}",
                     FloatieMessage.MessageNature.Debuff, true)));
         }
     }
@@ -33,7 +28,7 @@ namespace PilotHealthPopup
     {
         public static void Init()
         {
-            var harmony = HarmonyInstance.Create("io.github.mpstark.EnemyPilotHealthPopup");
+            var harmony = HarmonyInstance.Create("io.github.mpstark.PilotHealthPopup");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
     }
