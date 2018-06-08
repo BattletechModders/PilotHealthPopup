@@ -19,7 +19,8 @@ namespace PilotHealthPopup
                 return;
 
             __instance.ParentActor?.Combat.MessageCenter.PublishMessage(new AddSequenceToStackMessage(
-                new ShowActorInfoSequence(__instance.ParentActor, $"HEALTH: {__instance.TotalHealth - __instance.Injuries}/{__instance.TotalHealth}",
+                new ShowActorInfoSequence(__instance.ParentActor,
+                    $"HEALTH: {__instance.TotalHealth - __instance.Injuries}/{__instance.TotalHealth}",
                     FloatieMessage.MessageNature.Debuff, true)));
         }
     }
