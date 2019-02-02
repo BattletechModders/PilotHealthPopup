@@ -5,6 +5,13 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PilotHealthPopup", "PilotHealthPopup\PilotHealthPopup.csproj", "{6CB5FB2A-0D77-4EF1-902E-59DBAE7EE9D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{48C1E1E6-7123-4F0B-ADEE-96097CBC8D37}"
+	ProjectSection(SolutionItems) = preProject
+		mod.json = mod.json
+		README.md = README.md
+		UNLICENSE = UNLICENSE
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|Any CPU = Release|Any CPU
